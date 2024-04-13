@@ -18,4 +18,5 @@ jobs:
       - uses: ./
         with:
           resultPath: dummy_coverage/.last_run.json
+          currentResultPath: dummy_coverage/.current_coverage.json
           token: ${{ secrets.GITHUB_TOKEN }}

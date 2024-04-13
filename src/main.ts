@@ -1,6 +1,6 @@
 import path from 'path'
 import * as core from '@actions/core'
-import {report} from './report'
+import { report } from './report'
 
 interface Result {
   result: {
@@ -17,7 +17,6 @@ async function run(): Promise<void> {
     const resultPath: string = core.getInput('resultPath')
     core.debug(`resultPath ${resultPath}`)
 
-    // eslint-disable-next-line @typescript-eslint/no-non-null-assertion, @typescript-eslint/no-require-imports, @typescript-eslint/no-var-requires
     const json = require(path.resolve(process.env.GITHUB_WORKSPACE!, resultPath)) as Result
     const coveredPercent = json.result.covered_percent ?? json.result.line
 
